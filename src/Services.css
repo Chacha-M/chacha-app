@@ -2,9 +2,9 @@
 .services-page {
     padding: 20px;
     margin: 20px;
-    background-color: #f9f9f9;
+    background-color: #007BFF;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgb(255, 254, 254);
   }
   
   .services-page h1 {
@@ -38,6 +38,10 @@
 
 .services-container {
     padding: 20px;
+    background-image: url('Background2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgba(0, 0, 0, 0.856);
   }
   
   .services-container h1 {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './SignIn.css';
 
 const SignIn = () => {
@@ -8,6 +9,8 @@ const SignIn = () => {
     password: ''
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData({ ...formData, [id]: value });
@@ -15,7 +18,25 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted with data:', formData);
+
+    // Check if the provided user ID, email, and password match the predefined fake data
+    const fakeUserId = '123';
+    const fakeEmail = 'test@example.com';
+    const fakePassword = 'password123';
+
+    if (
+      formData.userId === fakeUserId &&
+      formData.email === fakeEmail &&
+      formData.password === fakePassword
+    ) {
+      console.log('Sign in successful! Redirecting to Dashboard...');
+
+      // Navigate to Dashboard on successful sign-in
+      navigate('/dashboard');
+    } else {
+      console.log('Invalid credentials. Please try again.');
+      // Add logic to display an error message for invalid credentials if needed
+    }
   };
 
   return (
@@ -40,7 +61,7 @@ const SignIn = () => {
               <button type="submit" className="btn btn-primary btn-block">Login</button>
             </form>
             <div className="text-center mt-3">
-              <a href= "https://example.com">Forgot Password?</a>
+              <a href="https://example.com">Forgot Password?</a>
             </div>
           </div>
         </div>
